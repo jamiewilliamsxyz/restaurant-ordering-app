@@ -7,7 +7,7 @@ document.getElementById("menu").innerHTML = menuArray
     <div class="menu-item">
       <div class="item-left-container">
         <span class="item-emoji">${item.emoji}</span>
-        <div >
+        <div>
           <h3 class="item-name">${item.name}</h3>
           <p class="item-ingredients">${item.ingredients.join(", ")}</p>
           <p class="item-price">£${item.price}</p>
@@ -18,7 +18,6 @@ document.getElementById("menu").innerHTML = menuArray
         item.id
       }" id="addItemBtn" class="item-btn">+</button>
     </div>
-    <hr />
   `;
   })
   .join("");
