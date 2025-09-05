@@ -1,8 +1,7 @@
 import { menuArray } from "./data.js";
 
-const menu = document.getElementById("menu");
-
-const mappedMenu = menuArray
+// Render menu items
+document.getElementById("menu").innerHTML = menuArray
   .map((item) => {
     return `
     <div class="menu-item">
@@ -23,5 +22,3 @@ const mappedMenu = menuArray
   `;
   })
   .join("");
-
-menu.innerHTML = mappedMenu;
