@@ -5,6 +5,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: "Inter", Arial, Tahoma, sans-serif;
 }
 
 main {
@@ -79,7 +80,6 @@ h2 {
 }
 
 .item-btn {
-  font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #dedede;
   border-radius: 100%;
   background-color: #ffffff;
