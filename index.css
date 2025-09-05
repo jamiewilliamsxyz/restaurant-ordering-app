@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  width: 420px;
+  height: 720px;
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 50px #000000;
+}
+
+header {
+  background-color: burlywood;
+  color: white;
+  padding: 10px 30px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 0.5;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+section {
+  color: #202020;
+}
