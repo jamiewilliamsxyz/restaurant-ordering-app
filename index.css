@@ -25,13 +25,20 @@ header {
   text-align: left;
 }
 
+h1,
+h2 {
+  text-shadow: 2px 2px 5px black;
+}
+
 h1 {
   font-size: 30px;
   line-height: 0.5;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 16px;
+  font-weight: 500;
 }
 
 .main-content {
