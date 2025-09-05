@@ -1,7 +1,6 @@
 ## Restaurant Ordering App
 
-Restaurant Ordering App is a simple mobile ordering website to order food items.
-Made with vanilla JavaScript, HTML5 and CSS3.
+Restaurant Ordering App is a simple mobile ordering website to order food items made with vanilla JavaScript, HTML5 and CSS3.
 
 ### Features
 
