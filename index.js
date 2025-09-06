@@ -31,24 +31,26 @@ const addItemToOrder = (id) => {
 };
 
 document.addEventListener("click", (e) => {
-  let itemToAddId = Number(e.target.dataset.menuItemId);
+  if (e.target.dataset.menuItemId) {
+    let itemToAddId = Number(e.target.dataset.menuItemId);
 
-  switch (itemToAddId) {
-    case 0:
-      addItemToOrder(itemToAddId);
-      break;
-    case 1:
-      addItemToOrder(itemToAddId);
-      break;
-    case 2:
-      addItemToOrder(itemToAddId);
-      break;
-    default:
-      console.log("An error has occurred: No matching items found");
-  }
+    switch (itemToAddId) {
+      case 0:
+        addItemToOrder(itemToAddId);
+        break;
+      case 1:
+        addItemToOrder(itemToAddId);
+        break;
+      case 2:
+        addItemToOrder(itemToAddId);
+        break;
+      default:
+        break;
+    }
 
-  if (canOrder) {
-    renderOrder();
+    if (canOrder) {
+      renderOrder();
+    }
   }
 });
 
