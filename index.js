@@ -46,6 +46,13 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Listen for payment form submit
+document.getElementById("payment-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.querySelector(".payment-modal").style.display = "none";
+});
+
+// Functions for adding/removing
 const addItemToOrder = (id) => {
   order.push(menuArray.filter((item) => item.id === id)[0]);
 };
@@ -53,15 +60,6 @@ const addItemToOrder = (id) => {
 const removeItemFromOrder = (id) => {
   order.splice(order.indexOf(order.filter((item) => item.id === id)[0]), 1);
 };
-
-const openPaymentModal = () => {
-  document.querySelector(".payment-modal").style.display = "flex";
-};
-
-document.getElementById("payment-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  document.querySelector(".payment-modal").style.display = "none";
-});
 
 // Function to render the order display HTML
 const renderOrder = () => {
@@ -99,4 +97,9 @@ const renderOrder = () => {
   } else {
     bottomSection.innerHTML = "";
   }
+};
+
+// Function to open payment modal
+const openPaymentModal = () => {
+  document.querySelector(".payment-modal").style.display = "flex";
 };
