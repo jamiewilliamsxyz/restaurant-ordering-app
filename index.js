@@ -2,6 +2,7 @@ import { menuArray } from "./data.js";
 
 const bottomSection = document.getElementById("bottom-section");
 let order = [];
+let canOrder = true;
 
 // Render menu items
 document.getElementById("menu").innerHTML = menuArray
@@ -29,19 +30,21 @@ document.addEventListener("click", (e) => {
   const target = e.target;
 
   // Add item to order
-  if (target.dataset.add) {
+  if (target.dataset.add && canOrder) {
     addItemToOrder(Number(target.dataset.add));
     renderOrder();
   }
 
   // Remove item from order
-  if (target.dataset.remove) {
+  if (target.dataset.remove && canOrder) {
     removeItemFromOrder(Number(target.dataset.remove));
     renderOrder();
   }
 
-  // Open payment modal
+  // Handle complete order button click
   if (target.id === "complete-order-btn") {
+    canOrder = !canOrder;
+    console.log(canOrder);
     openPaymentModal();
   }
 });
