@@ -1,7 +1,6 @@
 import { menuArray } from "./data.js";
 
 const bottomSection = document.getElementById("bottom-section");
-let canOrder = true;
 let order = [];
 
 // Render menu items
@@ -32,13 +31,13 @@ document.addEventListener("click", (e) => {
   // Add item to order
   if (target.dataset.add) {
     addItemToOrder(Number(target.dataset.add));
-    if (canOrder) renderOrder();
+    renderOrder();
   }
 
   // Remove item from order
   if (target.dataset.remove) {
     removeItemFromOrder(Number(target.dataset.remove));
-    if (canOrder) renderOrder();
+    renderOrder();
   }
 
   // Open payment modal
