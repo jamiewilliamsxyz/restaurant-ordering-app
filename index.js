@@ -86,6 +86,7 @@ const renderOrder = () => {
           }, 0)}
         </p>
       </div>
+      <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
     <div/>
   `;
 };
