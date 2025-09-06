@@ -57,6 +57,14 @@ const removeItemFromOrder = (id) => {
 
 const openPaymentModal = () => {};
 
+document.getElementById("payment-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("submitted");
+  // Hide modal
+  // Set can order to false
+  // Render confirmation message
+});
+
 // Function to render the order display HTML
 const renderOrder = () => {
   // Only render order display if there's an item in the order

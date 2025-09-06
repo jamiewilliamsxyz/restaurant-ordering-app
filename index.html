@@ -20,12 +20,45 @@
         <h1>Jimmy's Diner</h1>
         <h2>The best burgers and pizzas in town</h2>
       </header>
+
       <main>
         <section id="menu" class="menu"></section>
         <section id="bottom-section">
           <!-- Order display or confirmation message -->
         </section>
       </main>
+
+      <div id="payment-modal" class="payment-modal">
+        <h4 class="payment-modal-heading">Enter card details</h4>
+        <form id="payment-form">
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            maxlength="26"
+            required
+          />
+          <input
+            id="card-number"
+            name="card-number"
+            type="number"
+            placeholder="Enter card number"
+            maxlength="19"
+            required
+          />
+          <input
+            id="cvv"
+            name="cvv"
+            type="number"
+            placeholder="Enter CVV"
+            minlength="3"
+            maxlength="3"
+            required
+          />
+          <button type="submit" class="pay-btn">Pay</button>
+        </form>
+      </div>
     </div>
 
     <script src="./index.js" type="module"></script>
