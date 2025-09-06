@@ -1,9 +1,8 @@
 import { menuArray } from "./data.js";
 
+const bottomSection = document.getElementById("bottom-section");
 let canOrder = true;
 let order = [];
-
-const bottomSection = document.getElementById("bottom-section");
 
 // Render menu items
 document.getElementById("menu").innerHTML = menuArray
@@ -28,63 +27,36 @@ document.getElementById("menu").innerHTML = menuArray
 
 // Listen for button clicks
 document.addEventListener("click", (e) => {
-  // Remove item if the complete order button is clicked by passing the id into the function to remove an item
-  if (e.target.dataset.remove) {
-    let itemToRemoveId = Number(e.target.dataset.remove);
+  const target = e.target;
 
-    switch (itemToRemoveId) {
-      case 0:
-        removeItemFromOrder(itemToRemoveId);
-        break;
-      case 1:
-        removeItemFromOrder(itemToRemoveId);
-        break;
-      case 2:
-        removeItemFromOrder(itemToRemoveId);
-        break;
-      default:
-        break;
-    }
-
-    // Call render order function
-    if (canOrder) {
-      renderOrder();
-    }
+  // Add item to order
+  if (target.dataset.add) {
+    addItemToOrder(Number(target.dataset.add));
+    if (canOrder) renderOrder();
   }
 
-  // Add item if the add item is clicked by passing the id into the function to add an item
-  if (e.target.dataset.add) {
-    let itemToAddId = Number(e.target.dataset.add);
+  // Remove item from order
+  if (target.dataset.remove) {
+    removeItemFromOrder(Number(target.dataset.remove));
+    if (canOrder) renderOrder();
+  }
 
-    switch (itemToAddId) {
-      case 0:
-        addItemToOrder(itemToAddId);
-        break;
-      case 1:
-        addItemToOrder(itemToAddId);
-        break;
-      case 2:
-        addItemToOrder(itemToAddId);
-        break;
-      default:
-        break;
-    }
-
-    // Call render order function
-    if (canOrder) {
-      renderOrder();
-    }
+  // Open payment modal
+  if (target.id === "complete-order-btn") {
+    openPaymentModal();
   }
 });
 
-// Function to find the matching id from the menu data and then add that item to the order array
 const addItemToOrder = (id) => {
   order.push(menuArray.filter((item) => item.id === id)[0]);
 };
 
-// Function find the index of the item in orders array that matches the id to then remove it
 const removeItemFromOrder = (id) => {
   order.splice(order.indexOf(order.filter((item) => item.id === id)[0]), 1);
+};
+
+const openPaymentModal = () => {
+  console.log("test");
 };
 
 // Function to render the order display HTML
