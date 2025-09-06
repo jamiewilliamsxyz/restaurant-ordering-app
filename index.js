@@ -43,22 +43,24 @@ document.addEventListener("click", (e) => {
 
   // Handle complete order button click
   if (target.id === "complete-order-btn") {
-    canOrder = !canOrder;
-    console.log(canOrder);
+    canOrder = false;
     openPaymentModal();
   }
 });
 
 // Listen for payment form submit
+let paymentForm = document.getElementById("payment-form");
+
 document.getElementById("payment-form").addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Hide modal
   document.querySelector(".payment-modal").style.display = "none";
 
-  // Render confirmation message
-  let customerName = "James"; // Temporary
-  bottomSection.innerHTML = `<div class="confirmation-message"><p>Thanks, ${customerName}.<br />Your order is on its way!</p></div>`;
+  // Render confirmation message with name from form data
+  bottomSection.innerHTML = `<div class="confirmation-message"><p>Thanks, ${new FormData(
+    paymentForm
+  ).get("name")}.<br />Your order is on its way!</p></div>`;
 });
 
 // Functions for adding/removing
