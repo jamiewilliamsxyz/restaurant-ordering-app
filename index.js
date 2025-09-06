@@ -77,18 +77,19 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Function to add item to order if it matches one in the menu
+// Function to find the matching id from the menu data and then add that item to the order array
 const addItemToOrder = (id) => {
   order.push(menuArray.filter((item) => item.id === id)[0]);
 };
 
-// Function to remove item from order
+// Function find the index of the item in orders array that matches the id to then remove it
 const removeItemFromOrder = (id) => {
-  order.pop(menuArray.filter((item) => item.id === id)[0]);
+  order.splice(order.indexOf(order.filter((item) => item.id === id)[0]), 1);
 };
 
-// Function to render the order HTML
+// Function to render the order display HTML
 const renderOrder = () => {
+  // Only render order display if there's an item in the order
   if (order.length > 0) {
     bottomSection.innerHTML = `
     <div class="order-display-container">
