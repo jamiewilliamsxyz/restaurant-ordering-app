@@ -55,9 +55,7 @@ const removeItemFromOrder = (id) => {
   order.splice(order.indexOf(order.filter((item) => item.id === id)[0]), 1);
 };
 
-const openPaymentModal = () => {
-  console.log("test");
-};
+const openPaymentModal = () => {};
 
 // Function to render the order display HTML
 const renderOrder = () => {
