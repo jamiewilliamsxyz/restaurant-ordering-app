@@ -55,7 +55,7 @@ document.getElementById("payment-form").addEventListener("submit", (e) => {
 
   // Render confirmation message
   let customerName = "James"; // Temporary
-  bottomSection.innerHTML = `<div class="confirmation-message"><p class="customer-name-display">${customerName}</p></div>`;
+  bottomSection.innerHTML = `<div class="confirmation-message-container"><p class="confirmation-message">Thanks, ${customerName}. Your order is on its way!</p></div>`;
 });
 
 // Functions for adding/removing
