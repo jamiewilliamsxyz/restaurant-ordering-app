@@ -1,3 +1,5 @@
+/* Main */
+
 body {
   margin: 0;
   background-color: #202020;
@@ -6,11 +8,12 @@ body {
   justify-content: center;
   height: 100vh;
   font-family: "Inter", Arial, Tahoma, sans-serif;
+  padding: 0 10px;
 }
 
-main {
+.page-wrapper {
   width: 420px;
-  height: 720px;
+  height: 780px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -39,15 +42,18 @@ h2 {
   letter-spacing: 0.5px;
 }
 
-.main-content {
+main {
   color: #202020;
+  overflow-y: auto;
 }
+
+/* Menu */
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 15px 25px 35px 25px;
+  gap: 15px;
+  padding: 15px 25px 20px 25px;
 }
 
 .menu-item {
@@ -55,33 +61,33 @@ h2 {
   align-items: start;
   justify-content: space-between;
   border-bottom: 1px solid #d2d2d2;
-  padding: 10px 0;
+  padding: 5px 0 10px 0;
 }
 
 .item-left-container {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .item-emoji {
-  font-size: 60px;
+  font-size: 55px;
+  margin-top: 8px;
 }
 
 .item-name {
   font-weight: 500;
   line-height: 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .item-ingredients {
-  line-height: 0.5;
-  font-size: 14px;
+  font-size: 12px;
   color: #8b8b8b;
 }
 
 .item-price {
-  margin-top: 20px;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .item-btn {
@@ -92,15 +98,15 @@ h2 {
   cursor: pointer;
   font-size: 24px;
   font-weight: 200;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   margin-top: 2px;
   transition: 0.3s;
 }
 
 .item-btn:hover {
   border: none;
-  background-color: #3c3c3c;
+  background-color: #16db99;
   color: #ffffff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
@@ -110,5 +116,117 @@ h2 {
   box-shadow: none;
 }
 
-.bottom-section {
+/* Order Display */
+
+.order-display-container {
+  padding: 0 25px 20px 25px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
+
+.order-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.left-order-item-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.order-item-name,
+.total-price-text {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.order-item-price,
+.total-price {
+  font-size: 14px;
+}
+
+.order-heading {
+  text-align: center;
+  font-weight: 600;
+  line-height: 0.3;
+  font-size: 20px;
+}
+
+hr {
+  margin: 0;
+  margin-bottom: 3px;
+  border: none;
+  border-top: solid 2px #453d3d;
+  width: 100%;
+}
+
+.remove-item-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6a6a6a;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 3px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-item-btn:hover {
+  opacity: 1;
+  color: #565656;
+}
+
+.complete-order-btn,
+.pay-btn {
+  background-color: #16db99;
+  color: #ffffff;
+  width: 100%;
+  border: none;
+  font-weight: 600;
+  padding: 14px 0;
+  border-radius: 2px;
+  box-shadow: 0 0.5px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.complete-order-btn:hover,
+.pay-btn:hover {
+  background-color: #12b47e;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.complete-order-btn:active,
+.pay-btn:active {
+  box-shadow: 0 0.5px 5px rgba(0, 0, 0, 0.2);
+  scale: 0.98;
+}
+
+.complete-order-btn {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Modal */
+
+.pay-btn {
+  font-size: 16px;
+}
+
+/* Confirmation message */

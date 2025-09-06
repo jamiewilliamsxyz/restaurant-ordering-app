@@ -60,30 +60,29 @@ document.addEventListener("click", (e) => {
 // Render the order HTML
 const renderOrder = () => {
   document.getElementById("bottom-section").innerHTML = `
-    <div>
-      <h3>Your order</h3>
+    <div class="order-display-container">
+      <h3 class="order-heading">Your order</h3>
       <div>
         ${order
           .map(
             (item) => `
-            <div>
-              <div>
-                <p class="item-name">${item.name}</p>
-                <button id="remove-btn" class="remove-btn">remove</button>
+            <div class="order-item-container">
+              <div class="left-order-item-container">
+                <p class="order-item-name">${item.name}</p>
+                <button id="remove-item-btn" class="remove-item-btn">remove</button>
               </div>
-              <p class="item-price">${item.price}</p>
+              <p class="order-item-price">£${item.price}</p>
             </div>
           `
           )
           .join("")}
       </div>
       <hr>
-      <div class="total-price-section">
+      <div class="total-price-container">
         <p class="total-price-text">Total price:</p>
-        <p class="price">£
-          ${order.reduce((acc, obj) => {
-            return acc + obj.price;
-          }, 0)}
+        <p class="total-price">£${order.reduce((acc, obj) => {
+          return acc + obj.price;
+        }, 0)}
         </p>
       </div>
       <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
