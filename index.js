@@ -26,10 +26,12 @@ document.getElementById("menu").innerHTML = menuArray
   )
   .join("");
 
+// Add item to order if it matches one in the menu
 const addItemToOrder = (id) => {
   order.push(menuArray.filter((item) => item.id === id)[0]);
 };
 
+// Listen for button clicks to add an item to the order
 document.addEventListener("click", (e) => {
   if (e.target.dataset.menuItemId) {
     let itemToAddId = Number(e.target.dataset.menuItemId);
@@ -48,12 +50,14 @@ document.addEventListener("click", (e) => {
         break;
     }
 
+    // Call render order function
     if (canOrder) {
       renderOrder();
     }
   }
 });
 
+// Render the order HTML
 const renderOrder = () => {
   document.getElementById("bottom-section").innerHTML = `
     <div>
