@@ -49,7 +49,13 @@ document.addEventListener("click", (e) => {
 // Listen for payment form submit
 document.getElementById("payment-form").addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // Hide modal
   document.querySelector(".payment-modal").style.display = "none";
+
+  // Render confirmation message
+  let customerName = "James"; // Temporary
+  bottomSection.innerHTML = `<div class="confirmation-message"><p class="customer-name-display">${customerName}</p></div>`;
 });
 
 // Functions for adding/removing
