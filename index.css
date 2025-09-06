@@ -197,6 +197,7 @@ hr {
   background-color: #16db99;
   color: #ffffff;
   width: 100%;
+  margin-top: 10px;
   border: none;
   font-weight: 600;
   padding: 14px 0;
@@ -219,14 +220,57 @@ hr {
 }
 
 .complete-order-btn {
-  margin-top: 10px;
   font-size: 14px;
 }
 
 /* Modal */
 
+.payment-modal {
+  position: fixed;
+  top: 34%;
+  left: 34%;
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.8);
+  width: 320px;
+}
+
+.payment-modal-heading {
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+}
+
 .pay-btn {
   font-size: 16px;
+}
+
+#payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#payment-form > input {
+  border: solid 1px #757575;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 14px 10px;
+}
+
+/* Hide payment modal inputs default side arrows */
+
+#payment-form > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#payment-form > input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* Confirmation message */
